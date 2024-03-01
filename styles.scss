@@ -1,0 +1,388 @@
+@import 'config';
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+/*     outline: 1px solid red; */
+}
+
+html {
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    width: 1440px;
+    margin: auto;
+    background: $bgStyle;
+    font-family: Barlow;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+.container {
+    width: 82.7%;
+    margin: auto;  
+}
+
+nav {
+    &::after {
+        @extend %pseudo;
+        background-image: url(images/graphics.svg);
+        position: absolute;
+        width: 730px;
+        height: 747px;
+        top: -112px;
+        left: 839px;
+    }
+
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+
+    ul {
+        width: 350px;
+        height: 17px;
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+
+        li {
+            font-size: 14px;
+            line-height: 16.8px;
+            font-weight: 400;
+            
+            a {
+                color: white;
+                cursor: pointer;
+                text-decoration: none;
+            }
+        }
+    }
+    
+    #icon {
+        display: none;
+    }
+}
+
+header {
+    height: 530px;
+    padding-top: 133px;
+
+    &::before {
+        @extend %pseudo;
+        background-image: url(images/deco3.svg);
+        width: 142px;
+        height: 153px;
+        top: 185px;
+        left: 77px;
+    }
+
+    &::after {
+        @extend %pseudo;
+        background-image: url(images/deco2.svg);
+        width: 184px;
+        height: 181px;
+        top: 447px;
+        left: 405px;
+    }
+
+    h1 {
+        color: white;
+        font-size: 64px;
+        line-height: 76.8px;
+        font-weight: 300;
+    }
+
+    h2 {
+        color: $accentYellow;
+        font-size: 32px;
+        line-height: 38.4px;
+        font-weight: 400;
+        margin-top: 21px;
+    }
+
+    p {
+        width: 406px;
+        color: rgba(239, 239, 239, 0.8);
+        font-size: 16px;
+        line-height: 32px;
+        font-weight: 300;
+        margin-top: 20px
+    }
+
+    #link-started {
+        @extend %btn;
+        margin-right: 20px;
+        color: white;
+        background-color: $secondaryRed
+    }
+    #link-more{
+        @extend %btn;
+        color: black;
+    }
+}
+
+
+main {
+    width: 100%;
+    height: 570px;
+    margin-top: 180px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr;
+   
+
+    img {
+        width: 100%;
+        height: 100%;
+        grid-area: 1 / 1 / span 1 / span 1;
+    }
+
+    .side-info {
+        width: 470px;
+        height: 499px;
+        grid-area: 1 / 2 / span 1 / span 1;
+        margin-left: 116px;
+        margin-top: 30px;
+
+        &::after {
+            @extend %pseudo;
+            background-image: url(images/ellipse.svg);
+            width: 210px;
+            height: 210px;
+            top: 907px;
+            left: 1067px;
+        }
+
+        h4 {
+            @extend h4-s;
+        }
+
+        h2 {
+            @extend h2-s;
+            width: 321px;
+        }
+
+        h3 {
+            color: white;
+            font-size: 20px;
+            line-height: 32px;
+            font-weight: 400;
+            margin: 28px 0;
+        }
+
+        p {
+            @extend p-s
+        }
+
+        a {
+            @extend %btn;
+            background-color: $secondaryRed;
+            color: white;
+            
+        }
+    }
+}
+
+section {
+    width: 1170px;
+    height: 726px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40.5% 59.5%;
+    margin: 63px auto 100px;
+
+    .info {
+        width: 570px;
+        height: 294px;
+        grid-area: 1 / 1 / span 1 / span 1;
+        margin: auto;
+        margin-left: 285px;
+        text-align: center;
+
+        &::before {
+            @extend %pseudo;
+            background-image: url(images/deco3.svg);
+            top: 1430px;
+            left: 422px;
+            width: 142px;
+            height: 153px
+        }
+
+        h4 {
+            @extend h4-s;
+        }
+
+        h2 {
+            @extend h2-s;
+        }
+
+        p {
+            @extend p-s;
+            margin-top: 32px;
+        }
+
+    }
+
+    .articles {
+        width: 100%;
+        height: 100%;
+        grid-area: 2 / 1 / span 1 / span 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 30px;
+
+        h3 {
+            font-family: 'Barlow Condensed';
+            font-size: 24px;
+            line-height: 32px;
+            font-weight: 300;
+            color: white;
+            width: 306px;
+            margin: 38px auto 22px;
+        }
+        h5 {
+            font-size: 16px;
+            line-height: 32px;
+            font-weight: 400;
+            color: $halfWhite;
+            width: 306px;
+            margin: auto;
+            padding-bottom: 30px;
+        }
+
+        img {
+            border-radius: 12px 12px 0px 0px;
+        }
+        a {
+
+            .card {
+                height: 100%;
+                background: $articlesStyle;
+                border-radius: 12px;
+                outline: 2px solid rgba(255, 255, 255, 0.08);
+                box-shadow: 0px 24px 48px 0px rgba(0, 1, 44, 0.1572);
+            }   
+        }
+    }
+}
+
+footer {
+    width: 83%;
+    height: 312px;
+    margin: auto;
+    
+    .first-half {
+        width: 100%;
+        height: 238px;
+        display: grid;
+        grid-template-columns: 22% 24% 33% 21%;
+        grid-template-rows: 1fr;
+
+        #footer-logo {
+            grid-area: 1 / 1 / span 1 / span 1;
+        }
+        .menu {
+            grid-area: 1 / 2 / span 1 / span 1;
+            margin: 0 auto;
+            list-style: none;
+            @extend p-s;
+            font-weight: 300;
+            color: white;
+
+            #menu-head {
+                @extend h4-s;
+            }
+        }
+        .service {
+            grid-area: 1 / 3 / span 1 / span 1;
+            margin: 0 auto;
+            list-style: none;
+            @extend p-s;
+            font-weight: 300;
+            color: white;
+
+            #service-head {
+                @extend h4-s;
+            }
+        }
+        .socials {
+            grid-area: 1 / 4 / span 1 / span 1;
+            justify-self: flex-end;
+        
+            a {
+                display: inline-block;
+                margin-left: 5px;
+                width: 48px;
+                height: 48px;
+            }
+        
+            #fb {
+                background-image: url(images/fb.svg);
+                &:hover {
+                    background-image: url(images/fb-red.svg);
+                    transition: 0.5s ease-in;
+                }
+            }
+            #tw {
+                background-image: url(images/tw.svg);
+                &:hover {
+                    background-image: url(images/tw-red.svg);
+                    transition: 0.5s ease-in;
+                }
+            }
+            #ig {
+                background-image: url(images/ig.svg);
+                &:hover {
+                    background-image: url(images/ig-red.svg);
+                    transition: 0.5s ease-in;
+                }
+            }
+        }
+        
+        
+        
+    }
+    hr {
+        opacity: 0.1;
+    }
+    .second-half {
+        width: 100%;
+        height: 74px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 42px;
+
+        #copyright {
+            @extend h4-s;
+        }
+
+        #terms {
+            @extend p-s;
+            color: white;
+            font-weight: 300;
+        }
+
+        #privacy {
+            @extend p-s;
+            color: white;
+            font-weight: 300;
+        }
+    }
+}
+
+@import 'tablet';
+@import 'mobile';
+
